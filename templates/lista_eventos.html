@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="mt-5">
+    <h2>Eventos Disponibles</h2>
+    <div class="list-group">
+        {% for evento in eventos %}
+            <a href="{% url 'detalle_evento' evento.id %}" class="list-group-item list-group-item-action">
+                <h5 class="mb-1">{{ evento.nombre }}</h5>
+                <p class="mb-1">{{ evento.descripcion }}</p>
+                <small>{{ evento.fecha_hora }}</small>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
